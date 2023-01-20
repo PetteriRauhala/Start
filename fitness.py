@@ -49,6 +49,21 @@ def aikuisen_rasvaprosentti(bmi, ika, sukupuoli):
     rasvaprosentti = round(rasvaprosentti)
     return rasvaprosentti
 
+def lapsen_rasvaprosentti(bmi, ika, sukupuoli):
+    """Laskee lapsen kehon rasvaprosentin
+
+    Args:
+        bmi (float): painoindeksi
+        ika (float): henkilön ikä
+        sukupuoli (float): poika -> 1, tyttö -> 0
+
+    Returns:
+        float: kehon rasvaprosentti (lapsi)
+    """
+
+    rasvaprosentti = 1.51 * bmi - 0.7 * ika - 3.6 * sukupuoli + 1.4
+    return rasvaprosentti
+
 
 oma_bmi = laske_bmi(paino, pituus)
 oma_rasvaprosentti = aikuisen_rasvaprosentti(oma_bmi, ika, sukupuoli)
