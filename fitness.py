@@ -84,3 +84,4 @@ if __name__ == "__main__":
 
     print('Painoindeksisi on', oma_bmi,
           'ja kehon rasvaprosentti on', oma_rasvaprosentti)
+
