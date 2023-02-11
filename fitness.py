@@ -2,7 +2,6 @@
 # ===========================================================
 
 # Määritellään funktio painoindeksin laskentaan
-
 def laske_bmi(paino, pituus):
     """Laskee painoindeksin (BMI)
 
