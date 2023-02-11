@@ -1,6 +1,6 @@
 # Ensimmäinen ohjelma
 
-print('hello world')
+print('Hello, World')
 
 # TODO: Tee tämä loppuun huomenna
 # Mahtoikohan päivitys Githubiin onnistua 
