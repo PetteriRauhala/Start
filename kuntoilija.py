@@ -62,3 +62,4 @@ if __name__ == "__main__":
     print(juniorikuntoilija.nimi, 'painaa', juniorikuntoilija.paino, 'kg')
     # print('painoindeksi on ',kuntoilija.painoindeksi())
     print('rasvaprosentti on', juniorikuntoilija.rasvaprosentti())
+
