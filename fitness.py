@@ -32,7 +32,7 @@ def aikuisen_rasvaprosentti(bmi, ika, sukupuoli):
     """
 
     rasvaprosentti = 1.20 * bmi + 0.23 * ika - 10.8 * sukupuoli - 5.4
-    rasvaprosentti = round(rasvaprosentti)
+    rasvaprosentti = round(rasvaprosentti, 1)
     return rasvaprosentti
 
 # Määritellään funktio lapsen kehonrasvaprosentin laskemiseen
@@ -49,14 +49,16 @@ def lapsen_rasvaprosentti(bmi, ika, sukupuoli):
     """
 
     rasvaprosentti = 1.51 * bmi - 0.7 * ika - 3.6 * sukupuoli + 1.4
+    rasvaprosentti = round(rasvaprosentti, 1)
     return rasvaprosentti
+
 
 # Suoritetaan seuraavat rivit vain, jos tämä tiedosto on pääohjelma
 # Mahdollistaa funktioiden lataamisen toisiin ohjelmiin
 # Kun koodi ladataan toiseen tiedostoon,
 #  if__name__=="__main__":n alapuolella olevaa koodia ei suoriteta
 if __name__ == "__main__":
-    
+
     # Kysytään käyttäjältä tiedot
     pituus_teksti = input('Kuinka pitkä olet? (cm): ')
     paino_teksti = input('Kuinka paljon painat? (kg): ')
@@ -77,8 +79,8 @@ if __name__ == "__main__":
         oma_rasvaprosentti = aikuisen_rasvaprosentti(oma_bmi, ika, sukupuoli)
 
     # Muussa tapauksessa käytetään lapsen kaavaa
-    else:    
+    else:
         oma_rasvaprosentti = lapsen_rasvaprosentti(oma_bmi, ika, sukupuoli)
 
     print('Painoindeksisi on', oma_bmi,
-        'ja kehon rasvaprosentti on', oma_rasvaprosentti)
+          'ja kehon rasvaprosentti on', oma_rasvaprosentti)
