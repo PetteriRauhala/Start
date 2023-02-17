@@ -36,8 +36,9 @@ class Kuntoilija:
 
 
 class JunioriKuntoilija(Kuntoilija):
-    """Luokka nuoren kuntoilija tiedoille"""
+    """Luokka nuoren kuntoilijan tiedoille"""
 
+    # Konstruktori
     def __init__(self, nimi, pituus, paino, ika, sukupuoli):
 
         # Määritellään periytyminen, mitä ominaisuuksia perii
