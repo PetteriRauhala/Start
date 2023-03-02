@@ -47,7 +47,7 @@ def lapsen_rasvaprosentti(bmi, ika, sukupuoli):
 
     Args:
         bmi (float): painoindeksi
-        ika (float): henkilön ikä
+        ika (float): ikä
         sukupuoli (float): poika -> 1, tyttö -> 0
 
     Returns:
@@ -63,7 +63,7 @@ def usarasvaprosentti_mies(pituus, vyotaron_ymparys, kaulan_ymparys):
 
     Args:
         pituus (float): pituus (cm)
-        vyotaron_ymparys (float): vyätäron ympärysmitta (cm)
+        vyotaron_ymparys (float): vyötäron ympärysmitta (cm)
         kaulan_ymparys (float): kaulan ympärysmitta (cm)
 
     Returns:
@@ -76,9 +76,8 @@ def usarasvaprosentti_mies(pituus, vyotaron_ymparys, kaulan_ymparys):
     tuuma_kaulan_ymparys = kaulan_ymparys / 2.54
 
     # Laskentakaava rasvaprosentti
-    usarprosentti = 86.010 * \
-        math.log10(tuuma_vyotaro_ymparys - tuuma_kaulan_ymparys) - \
-        70.041 * math.log10(tuuma_pituus) + 36.76
+    usarprosentti = 86.010 *math.log10(tuuma_vyotaro_ymparys - 
+                                       tuuma_kaulan_ymparys) - 70.041 * math.log10(tuuma_pituus) + 36.76
     return usarprosentti
 
 
@@ -100,9 +99,8 @@ def usarasvaprosentti_nainen(pituus, vyotaron_ymparys, lantion_ymparys, kaulan_y
     tuuma_lantion_ymparys = lantion_ymparys / 2.54
     tuuma_kaulan_ymparys = kaulan_ymparys / 2.54
 
-    usa_rasvaprosentti = 163, 205 * \
-        math.log10(tuuma_vyotaron_ymparys + tuuma_lantion_ymparys -
-                   tuuma_kaulan_ymparys) - 97, 684 * math.log10(tuuma_pituus) - 78, 387.
+    usa_rasvaprosentti = 163.205 * math.log10(tuuma_vyotaron_ymparys + tuuma_lantion_ymparys -
+                   tuuma_kaulan_ymparys) - 97.684 * math.log10(tuuma_pituus) - 78.387
     return usa_rasvaprosentti
 
 
