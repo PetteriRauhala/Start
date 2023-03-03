@@ -1,12 +1,36 @@
 # GET BASIC INFORMATION ABOUT AN ATHLETE AND CREATE ATHELETE OBJECTS
-# ------------------------------------------------------------------ 
+# ------------------------------------------------------------------
 
 # LIBRARIES AND MODULES
 import kuntoilija
 
+# FUNCTIONS
+
+# Ask a question and convert the answer to float
+
+
+
+
 # Enter information about an athlete
 nimi = input('Nimi: ')
 
+# Use ask_user function to get height and convert it into float
+answer = ask_user('Pituus (cm) ')
+
+# Read the 1st element of the tuple containing height value
+pituus = answer[0]
+
+answer = ask_user('Paino (kg) ')
+paino = answer[0]
+
+answer = ask_user('Ikä ')
+ika = answer[0]
+
+answer = ask_user('Sukupuoli 0-nainen, 1-mies ')
+sukupuoli = answer[0]
+
+
+'''
 # Loop until user gives correctly formatted value to height question
 while True:
     pituus_txt = input('Pituus (cm): ')
@@ -56,7 +80,10 @@ while True:
     except Exception as e:
         print('Virhe syötetyssä arvossa, vain 1 ja 0 sallittu', e)
  
-
+'''
 kuntoilija1 = kuntoilija.Kuntoilija(nimi, pituus, paino, ika, sukupuoli)
 
 print(kuntoilija1.nimi, 'painoindeksisi on ', kuntoilija1.bmi)
+
+print('Viimeisen kysymyksen virheilmoitus',
+      answer[1], 'koodi', answer[2], 'engl. ilmoitus', answer[3])
