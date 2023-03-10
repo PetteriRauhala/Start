@@ -13,6 +13,49 @@ class Question():
     def __init__(self, question):
         self.question = question
 
+    @staticmethod
+    def ask_user_integer(question, loop):
+        """Asks a question and converts the answer to an integer
+        Args:
+            loop (bool): If True asks the question until able to convert it
+        Returns:
+            tuple: answer as integer, error message, error code, detailed error
+        """
+
+        # If loop argument is true use while loop until user inputs correct value
+        if loop == True:
+            
+            while True:
+                answer_txt = input(question)
+
+                # Let's try to convert input to numeric
+                try:
+                    answer = int(answer_txt)
+                    result = (answer, 'OK', 0, 'Conversion successful')
+                    break
+
+                # If an error occurs tell the user to check
+                except Exception as e:
+                    print('Virhe syötetyssä arvossa, älä käytä yksiköitä', e)
+                    result = (0, 'Error', 1, str(e))
+            
+        # Else ask once and return zero value and error information
+        else:
+            answer_txt = input(question)
+
+            # Let's try to convert input to numeric
+            try:
+                answer = int(answer_txt)
+                result = (answer, 'OK', 0, 'Conversion successful')
+
+            # If an error occurs tell the user to check
+            except Exception as e:
+                print('Virhe syötetyssä arvossa, älä käytä yksiköitä', e)
+                result = (0, 'Error', 1, str(e))
+
+        return result
+    
+    # TODO: Make all conversion functions to static ones
     def ask_user_float(self, loop):
         """Asks a question and converts the answer to a floating point number
         Args:
@@ -54,46 +97,46 @@ class Question():
 
         return result
     
-    def ask_user_integer(self, loop):
-        """Asks a question and converts the answer to an integer
-        Args:
-            loop (bool): If True asks the question until able to convert it
-        Returns:
-            tuple: answer as integer, error message, error code, detailed error
-        """
+    # def ask_user_integer(self, loop):
+    #     """Asks a question and converts the answer to an integer
+    #     Args:
+    #         loop (bool): If True asks the question until able to convert it
+    #     Returns:
+    #         tuple: answer as integer, error message, error code, detailed error
+    #     """
 
-        # If loop argument is true use while loop until user inputs correct value
-        if loop == True:
+    #     # If loop argument is true use while loop until user inputs correct value
+    #     if loop == True:
             
-            while True:
-                answer_txt = input(self.question)
+    #         while True:
+    #             answer_txt = input(self.question)
 
-                # Let's try to convert input to numeric
-                try:
-                    answer = int(answer_txt)
-                    result = (answer, 'OK', 0, 'Conversion successful')
-                    break
+    #             # Let's try to convert input to numeric
+    #             try:
+    #                 answer = int(answer_txt)
+    #                 result = (answer, 'OK', 0, 'Conversion successful')
+    #                 break
 
-                # If an error occurs tell the user to check
-                except Exception as e:
-                    print('Virhe syötetyssä arvossa, älä käytä yksiköitä', e)
-                    result = (0, 'Error', 1, str(e))
+    #             # If an error occurs tell the user to check
+    #             except Exception as e:
+    #                 print('Virhe syötetyssä arvossa, älä käytä yksiköitä', e)
+    #                 result = (0, 'Error', 1, str(e))
             
-        # Else ask once and return zero value and error information
-        else:
-            answer_txt = input(self.question)
+    #     # Else ask once and return zero value and error information
+    #     else:
+    #         answer_txt = input(self.question)
 
-            # Let's try to convert input to numeric
-            try:
-                answer = int(answer_txt)
-                result = (answer, 'OK', 0, 'Conversion successful')
+    #         # Let's try to convert input to numeric
+    #         try:
+    #             answer = int(answer_txt)
+    #             result = (answer, 'OK', 0, 'Conversion successful')
 
-            # If an error occurs tell the user to check
-            except Exception as e:
-                print('Virhe syötetyssä arvossa, älä käytä yksiköitä', e)
-                result = (0, 'Error', 1, str(e))
+    #         # If an error occurs tell the user to check
+    #         except Exception as e:
+    #             print('Virhe syötetyssä arvossa, älä käytä yksiköitä', e)
+    #             result = (0, 'Error', 1, str(e))
 
-        return result
+    #     return result
     
     def ask_user_boolean(self, true_value, false_value, loop):
         """Asks a question and converts the answer to a boolean value
