@@ -99,8 +99,10 @@ class Question():
     
     # def ask_user_integer(self, loop):
     #     """Asks a question and converts the answer to an integer
+
     #     Args:
     #         loop (bool): If True asks the question until able to convert it
+
     #     Returns:
     #         tuple: answer as integer, error message, error code, detailed error
     #     """
