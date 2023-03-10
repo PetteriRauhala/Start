@@ -13,21 +13,21 @@ import questions
 name = input('Nimi: ')
 
 # Ask details about her/him
-question1 = questions.Question('Kuinka paljon painat (kg): ')
-weight = question1.ask_user_float(True)[0]
-question2 = questions.Question('Kuinka pitkä olet? (cm): ')
-height = question2.ask_user_float(True)[0]
-question3 = questions.Question('Kuinka vanha olet?: ')
-age = question3.ask_user_integer(True)[0]
-question4 = questions.Question('Sukupuoli 1 mies, 0 nainen: ')
-gender = question4.ask_user_integer(True)[0]
-question5 = questions.Question('Mikä on kaulanympäryksesi? (cm): ')
-neck = question5.ask_user_float(True)[0]
-question6 = questions.Question('Mikä on vyötärönympäryksesi? (cm): ')
-waist = question6.ask_user_float(True)[0]
+question = questions.Question('Kuinka paljon painat (kg): ')
+weight = question.ask_user_float(True)[0]
+question = questions.Question('Kuinka pitkä olet? (cm): ')
+height = question.ask_user_float(True)[0]
+question = questions.Question('Kuinka vanha olet?: ')
+age = question.ask_user_integer(True)[0]
+question = questions.Question('Sukupuoli 1 mies, 0 nainen: ')
+gender = question.ask_user_integer(True)[0]
+question = questions.Question('Mikä on kaulanympäryksesi? (cm): ')
+neck = question.ask_user_float(True)[0]
+question = questions.Question('Mikä on vyötärönympäryksesi? (cm): ')
+waist = question.ask_user_float(True)[0]
 if gender == 0:
-    question7 = questions.Question('Mikä on lantionympäryksesi? (cm): ')
-    hips = question7.ask_user_float(True)[0]
+    question = questions.Question('Mikä on lantionympäryksesi? (cm): ')
+    hips = question.ask_user_float(True)[0]
 
 # Create an athelete object from Kuntoilija class
 athlete = kuntoilija.Kuntoilija(name, height, weight, age, gender)
