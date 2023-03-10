@@ -127,10 +127,10 @@ class Question():
                     answer = False
                     result = (answer, 'OK', 0, 'Conversion succesful')
                     break
-
                 else:
                     print('Virhe syötetyssä arvossa, älä käytä yksiköitä', true_value, false_value,)
                     result = ('N/A', 'Error', 1, 'unable to convert to boolean')
+
 
         # Else ask once and return zero value and error information
         else:
