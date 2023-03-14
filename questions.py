@@ -78,6 +78,7 @@ class Question():
                 answer_txt = input(question)
                 
                 try:
+                    answer_txt = answer_txt.replace(',', '.')
                     answer = float(answer_txt)
                     result = (answer, 'OK', 0, 'Conversion successful')
                     break
@@ -93,6 +94,7 @@ class Question():
 
             # Let's try to convert input to numeric
             try:
+                answer_txt = answer_txt.replace(',', '.')
                 answer = float(answer_txt)
                 result = (answer, 'OK', 0, 'Conversion successful')
 
@@ -157,18 +159,54 @@ class Question():
 
         return result
 
-    # TODO: Create a method to ask a question and convert answer according to a dictionary
+    # A method to ask a question and convert answer according to dictionary
+    @staticmethod
+    def ask_user_dictionary(question, dictionary, loop):
+        """Return a value based on dictionary
+
+        Args:
+            question (str): The question to be asked
+            dictionary (dict): Possible answers in key-value-pairs
+            loop (bool): If True asks the question until able to convert it
+
+        Returns:
+            tuple: answer in correct type, error message, error code, detailed error
+        """
+        if loop == True:
+            while True:
+                answer_txt = input(question).lower()
+                try:
+                    value = dictionary[answer_txt]
+                    result = (value, 'OK', 0, 'Conversion successful')
+                    break
+                except Exception as e:
+                    result = ('N/A', 'Error', 1, str(e))
+        
+        else: 
+            answer_txt = input(question)
+            try:
+                 value = dictionary[answer_txt]
+                 result = (value, 'OK', 0, 'Conversion successful')
+            except Exception as e:
+                 result = ('N/A', 'Error', 1, str(e))
+
+        return result
 
 if __name__ == "__main__":
-    # Lets ask ask the weight and convert answer to a floating point number
+    # Let's ask the weight and convert answer to a floating point number
     answer_and_error = Question.ask_user_float(
         'Kuinka paljon painat: ', True)
     print(answer_and_error)
 
-    # Lets ask the age and convert it to an integer
+    # Let's ask the age and convert it to an integer
     answer_and_error = Question.ask_user_integer('Kuinka vanha olet: ', True)
     print(answer_and_error)
 
-    # Lets ask the question and convert the answer to an boolean value
-    answer_and_error = Question.ask_user_boolean('Haluatko lopettaa', 'Y', 'N', True)
+    # Let's ask the question and convert the answer to an boolean value
+    answer_and_error = Question.ask_user_boolean('Oletko urheilullinen', 'Y', 'N', True)
+    print(answer_and_error)
+
+    gender_dictionary = {'tyttö': 0, 'poika': 1, 'mies': 1, 'nainen': 0}
+
+    answer_and_error = Question.ask_user_dictionary('Sukupuoli: ', gender_dictionary, False)
     print(answer_and_error)
