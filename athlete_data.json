@@ -1,0 +1,42 @@
+[
+    {
+        "nimi": "matti",
+        "pituus": 171.0,
+        "paino": 74.6,
+        "ika": 60,
+        "sukupuoli": 1,
+        "pvm": "2023-03-21"
+    },
+    {
+        "nimi": "Essi",
+        "pituus": 170.0,
+        "paino": 64.0,
+        "ika": 38,
+        "sukupuoli": 0,
+        "pvm": "2023-03-22"
+    },
+    {
+        "nimi": "Erkki",
+        "pituus": 198.0,
+        "paino": 130.0,
+        "ika": 30,
+        "sukupuoli": 1,
+        "pvm": "2023-03-21"
+    },
+    {
+        "nimi": "Essi",
+        "pituus": 170.0,
+        "paino": 63.0,
+        "ika": 34,
+        "sukupuoli": 0,
+        "pvm": "2023-04-01"
+    },
+    {
+        "nimi": "Matti",
+        "pituus": 171.0,
+        "paino": 70.0,
+        "ika": 60,
+        "sukupuoli": 1,
+        "pvm": "2023-04-01"
+    }
+]
