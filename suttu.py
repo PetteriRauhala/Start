@@ -66,7 +66,7 @@ def timediff(t1, t2):
 aikaero = timediff('10:00:00', '14:30:00')
 print(aikaero)
 '''
-# Luodaan tyhjä lista pinon perustaksi
+#Luodaan tyhjä lista pinon perustaksi
 jumppari_lista = []
 
 # Määritellään Python-sanakirja
