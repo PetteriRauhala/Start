@@ -65,8 +65,8 @@ with open('athlete_data.json', 'r') as file:
         print('paino oli', item['paino'])
 
 # A dictionary for single weighing of an athlete
-athlete_data_row = {'nimi': athlete.nimi, 'pituus': athlete.pituus, 'paino': athlete.paino, 'ika': athlete.ika,
-                'sukupuoli': athlete.sukupuoli, 'pvm': athlete.punnitus_paiva}
+athlete_data_row = {'nimi': athlete.nimi, 'pituus': athlete.pituus, 'paino': athlete.paino,
+                'ika': athlete.ika,'sukupuoli': athlete.sukupuoli, 'pvm': athlete.punnitus_paiva}
 
 # Add a new data row to the athlete_data list
 athlete_data.append(athlete_data_row)
